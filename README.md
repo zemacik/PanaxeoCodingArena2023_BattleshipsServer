@@ -8,9 +8,9 @@ The API provided is the same as prescribed by the game assignment. The only diff
 Combination of `token` and `test` query parameter is used to identify the player session. (you need to sent the same `token` and `test` query parameter) 
 
 ```http
-GET http://localhost:8080/status/?test={{request.isSimulation}}
+GET http://localhost:8080/status/?test=true
 Accept: application/json
-Authorization: bearer {{request.api_AccessToken}}
+Authorization: bearer ANY_TOKEN_YOU_WANT
 ```
 
 ![The one](./assets/ui_animation.gif)
@@ -43,37 +43,33 @@ while sending your requests to the API as `Token` you can youse any string you w
 
 Example requests:
 ```http
-@request.api_HostAddress = http://localhost:8080
-@request.api_AccessToken = ANY_TOKEN_YOU_WANT
-@request.isSimulation = true
-
-GET {{request.api_HostAddress}}/fire/?test={{request.isSimulation}}
+GET http://localhost:8080/fire/?test=true
 Accept: application/json
-Authorization: bearer {{request.api_AccessToken}}
+Authorization: bearer ANY_TOKEN_YOU_WANT
 
 ###
 
-GET {{request.api_HostAddress}}/status/?test={{request.isSimulation}}
+GET http://localhost:8080/status/?test=true
 Accept: application/json
-Authorization: bearer {{request.api_AccessToken}}
+Authorization: bearer ANY_TOKEN_YOU_WANT
 
 ###
 
-GET {{request.api_HostAddress}}/fire/3/8?test={{request.isSimulation}}
+GET http://localhost:8080/fire/3/8?test=true
 Accept: application/json
-Authorization: bearer {{request.api_AccessToken}}
+Authorization: bearer ANY_TOKEN_YOU_WANT
 
 ###
 
-GET {{request.api_HostAddress}}/fire/0/0/avenger/thor?test={{request.isSimulation}}
+GET http://localhost:8080/fire/3/8/avenger/thor?test=true
 Accept: application/json
-Authorization: bearer {{request.api_AccessToken}}
+Authorization: bearer ANY_TOKEN_YOU_WANT
 
 ###
 
-GET {{request.api_HostAddress}}/reset?test={{request.isSimulation}}
+GET http://localhost:8080/reset?test=true
 Accept: application/json
-Authorization: bearer {{request.api_AccessToken}}
+Authorization: bearer ANY_TOKEN_YOU_WANT
 ```
 
 Application will be available at http://localhost:8080 for the visualisation and at http://localhost:8080/swagger/index.html for the swagger documentation.
