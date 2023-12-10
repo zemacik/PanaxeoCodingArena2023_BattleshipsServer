@@ -1,0 +1,59 @@
+@page
+<h1>Battleships game server</h1>
+<div>
+    <h3>Connection Status: <span id="connectionStatus">Connecting...</span></h3>
+</div>
+<div class="container">
+    <div>
+        <h3>Game Info</h3>
+        <div id="gameInfo" class="bordered">
+            <table class="game-info-table">
+                <tr>
+                    <td style="min-width: 150px;" class="font-weight-bold">Token</td>
+                    <td style="min-width: 150px;" id="game-info-status-token"></td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Map</td>
+                    <td id="game-info-status-map-id"></td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Map counter</td>
+                    <td id="game-info-status-map"></td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Moves</td>
+                    <td id="game-info-status-moves"></td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Avenger Available</td>
+                    <td id="game-info-status-avenger-available"></td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Avenger Used</td>
+                    <td id="game-info-status-avenger-used"></td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Match Finished</td>
+                    <td id="game-info-status-match-finished"></td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Game Finished</td>
+                    <td id="game-info-status-game-finished"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        <h3>Player moves</h3>
+        <div id="gameBoard" class="bordered"></div>
+    </div>
+    <div>
+        <h3>Board definition</h3>
+        <div id="gameBoardDefinition" class="bordered"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js" asp-append-version="true"></script>
+}

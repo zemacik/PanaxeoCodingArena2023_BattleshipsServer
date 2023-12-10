@@ -1,0 +1,113 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    grid-auto-rows: 1fr;
+}
+
+#gameBoard, #gameBoardDefinition {
+    display: grid;
+    grid-template-columns: repeat(12, 30px);
+    grid-gap: 2px;
+    min-width: 380px;
+}
+
+#gameInfo {
+    margin-top: 20px;
+    min-width: 380px;
+    min-height: 380px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: lightgrey;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.bordered {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+table.game-info-table td {
+    padding: 0.5rem;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr; /* Stack them under each other on smaller screens */
+    }
+
+    #gameBoard, #gameBoardDefinition {
+        grid-template-columns: repeat(12, 20px);
+    }
+
+    .cell {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+}
+
+.cell:hover {
+    opacity: 0.7;
+}
+
+.water {
+    background-color: cornflowerblue;
+}
+
+.ship {
+    background-color: black;
+}
+
+.ship_hit {
+    background-color: #d23a3a;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+}
+
+.ship_hit::before {
+    content: 'X';
+}
+
+.hit {
+    background-color: red;
+}
+
+.unknown {
+    background-color: lightgrey;
+}
+
+.status {
+    font-size: 1.5rem;
+}
+
+.status-success {
+    color: green;
+}
+
+.status-warning {
+    color: orange;
+}
+
+.status-danger {
+    color: red;
+}
+
+

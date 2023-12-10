@@ -1,0 +1,31 @@
+@request.api_HostAddress = http://localhost:5127
+@request.api_AccessToken = 1111111111111111111
+@request.isSimulation = false
+
+GET {{request.api_HostAddress}}/fire/?test={{request.isSimulation}}
+Accept: application/json
+Authorization: bearer {{request.api_AccessToken}}
+
+###
+
+GET {{request.api_HostAddress}}/status/?test={{request.isSimulation}}
+Accept: application/json
+Authorization: bearer {{request.api_AccessToken}}
+
+###
+
+GET {{request.api_HostAddress}}/fire/0/0?test={{request.isSimulation}}
+Accept: application/json
+Authorization: bearer {{request.api_AccessToken}}
+
+###
+
+GET {{request.api_HostAddress}}/fire/0/0/avenger/thor?test={{request.isSimulation}}
+Accept: application/json
+Authorization: bearer {{request.api_AccessToken}}
+
+###
+
+GET {{request.api_HostAddress}}/reset?test={{request.isSimulation}}
+Accept: application/json
+Authorization: bearer {{request.api_AccessToken}}
