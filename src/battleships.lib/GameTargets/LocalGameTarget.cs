@@ -87,8 +87,6 @@ public abstract class LocalGameTarget : IGameTarget
         }
 
         var position = new GameCellPosition(row, column);
-        _state.MoveCount++;
-        _state.TotalMoveCount++;
 
         // If the position is not a valid position or already revealed
         if (!_state.GameFieldDefinition.IsCellPositionInsideField(position)
@@ -99,6 +97,9 @@ public abstract class LocalGameTarget : IGameTarget
             
             return Task.FromResult(err);
         }
+        
+        _state.MoveCount++;
+        _state.TotalMoveCount++;
 
         string cellResponseValue;
 
@@ -181,11 +182,12 @@ public abstract class LocalGameTarget : IGameTarget
         }
 
         var position = new GameCellPosition(row, column);
-        _state.MoveCount++;
-        _state.TotalMoveCount++;
 
         if (!_state.AvengerAvailable)
             return Task.FromResult(CreateAvengerFireResponseFromState() with { Cell = string.Empty, Result = false });
+
+        _state.MoveCount++;
+        _state.TotalMoveCount++;
 
         var result = CreateAvengerFireResponseFromState() with { MoveCount = _state.MoveCount + 1 };
 
