@@ -25,6 +25,13 @@
     min-height: 380px;
 }
 
+#game-info-status-token {
+    overflow: hidden;
+    display: block;
+    max-width: 190px;
+    text-overflow: ellipsis;
+}
+
 .cell {
     width: 30px;
     height: 30px;
@@ -109,5 +116,6 @@ table.game-info-table td {
 .status-danger {
     color: red;
 }
+
 
 
