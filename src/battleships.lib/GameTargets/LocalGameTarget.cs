@@ -442,7 +442,7 @@ public abstract class LocalGameTarget : IGameTarget
                     state.GameField.SetCellStatus(randomCellPosition, Constants.GridCellShip);
 
                     avengerResults.Add(new AvengerResult(
-                        new MapPoint(X: randomCellPosition.Column, Y: randomCellPosition.Row),
+                        new MapPoint(X: randomCellPosition.Row, Y: randomCellPosition.Column),
                         true
                     ));
                 }
@@ -451,7 +451,7 @@ public abstract class LocalGameTarget : IGameTarget
                     state.GameField.SetCellStatus(randomCellPosition, Constants.GridCellWater);
 
                     avengerResults.Add(new AvengerResult(
-                        new MapPoint(X: randomCellPosition.Column, Y: randomCellPosition.Row),
+                        new MapPoint(X: randomCellPosition.Row, Y: randomCellPosition.Column),
                         Hit: false));
                 }
 
@@ -499,7 +499,7 @@ public abstract class LocalGameTarget : IGameTarget
 
             return
             [
-                new AvengerResult(new MapPoint(X: randomCellPosition.Column, Y: randomCellPosition.Row), Hit: false)
+                new AvengerResult(new MapPoint(X: randomCellPosition.Row, Y: randomCellPosition.Column), Hit: false)
             ];
         }
     }
@@ -545,7 +545,7 @@ public abstract class LocalGameTarget : IGameTarget
                 state.GameField.SetCellStatus(shipCellPosition, Constants.GridCellShip);
 
                 avengerResults.Add(new AvengerResult(
-                    new MapPoint(X: shipCellPosition.Column, Y: shipCellPosition.Row), Hit: true));
+                    new MapPoint(X: shipCellPosition.Row, Y: shipCellPosition.Column), Hit: true));
             }
 
             return avengerResults;
